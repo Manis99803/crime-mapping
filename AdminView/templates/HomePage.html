@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrimeMapping</title>
+  <link rel="stylesheet" type="text/css"
+         href = "{{ url_for('static', filename = 'css/HomePage.css') }}" / >
+  <link rel="stylesheet" type="text/css"
+         href = "{{ url_for('static', filename = 'css/Notification.css') }}" / >
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+     <style>
+ </style>
+</head>
+<body>
+  <div class='value'>
+      {% for row in rows %}
+        <div>
+            <div class='data'> {{ row["crimeHeading"] }} </div>
+            <div class='data'> {{ row["Latitude"] }} </div>
+            <div class='data'> {{ row["Longitude"] }} </div>
+            <div class='data'> {{ row["articleLink"] }} </div>
+            <div class='data'> {{ row["crimeDate"] }} </div>
+            <div class='data'> {{ row["crimeLocation"] }} </div>
+            <div class='data'> {{ row["TableName"] }} </div>
+        </div>
+      {% endfor %}
+    </div>
+  <div id='Menubar'>
+      <a href='#' id='Title'>CrimeAnalysis</a>
+      <a href='{{ url_for("getData") }}' id='Home' class='MenuLink'>Home</a>
+      <a href='#' id='About' class='MenuLink'>About</a>
+      <a href='{{ url_for("login_page") }}' id='Login' class='MenuLink'>Login</a>
+      <a href='{{ url_for("Frequency") }}' id='Frequency' class='MenuLink'>Crime Frequency</a>
+      <a href="{{ url_for('ViewComplaints') }}" class="notification">
+          <span> View Complaints </span>
+          <span class="badge" id = "notificationValue"> 0 </span>
+      </a>
+    </div>
+  <br>
+  
+  <div id="menu">
+    <form action="{{ url_for('DataView') }}" method="POST">
+      <p id="crimeType">Select Crime Type</p>
+    <select name="select" id="select">
+      <option value="Murder" class='crimeTableName' id='Murder'>Murder</option>
+      <option value="Rape" class='crimeTableName' id='Rape'>Rape</option>
+      <option value="Robbery" class='crimeTableName' id='Robbery'>Robbery</option>
+      <option value="Attack" class='crimeTableName' id='Attack'>Attack</option>
+    </select>
+    <br><br><br>
+    <input type="submit" value="Go">
+  </div>
+  <div id="vertical">
+  </div>
+  <div id="map" ></div>
+  {% include "about.html" %}
+   <script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'js/HomePage.js') }}" ></script>
+</body>
+</html>

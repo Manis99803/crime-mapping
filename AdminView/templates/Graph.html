@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CrimeMapping|Graph</title>
+	<link rel="stylesheet" type="text/css"
+         href = "{{ url_for('static', filename = 'css/HomePage.css') }}" / >
+    <link rel="stylesheet" type="text/css"
+         href = "{{ url_for('static', filename = 'css/Graph.css') }}" / >
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+     <style>
+ </style>
+</head>
+<body>
+	<div class='value'>
+	{% for row in rows %}
+	<div>
+		<div class='data'>{{ row["Location"] }}</div>
+		<div class='data'>{{ row["Frequency"] }}</div>
+		<div class='data'>{{ row["crimeType"] }}</div>
+	</div>
+	{% endfor %}
+	</div>
+	<div id='Menubar'>
+      <a href='{{ url_for("getData") }}' id='Title'>CrimeAnalysis</a>
+      <a href='{{ url_for("getData") }}' id='Home' class='MenuLink'>Home</a>
+      <a href='#' id='About' class='MenuLink'>About</a>
+      <a href='{{ url_for("Frequency") }}' id='Frequency' class='MenuLink'>CrimeFrequency</a>
+      <a href='#' id='GraphRepresentation' class='MenuLink'>GraphRepresentation</a>
+    </div>
+  <br>
+  <div id="menu">
+    <form action="{{ url_for('GraphVisualization') }}" method="POST">
+      <p id="crimeType">Select Crime Type</p>
+    <select name="select" id="select">
+      <option value="MurderFrequency" class='crimeTableName' id='Murder'>Murder</option>
+      <option value="RapeFrequency" class='crimeTableName' id='Rape'>Rape</option>
+      <option value="RobberyFrequency" class='crimeTableName' id='Robbery'>Robbery</option>
+      <option value="AttackFrequency" class='crimeTableName' id='Attack'>Attack</option>
+    </select>
+    <br><br><br>
+    <input type="submit" value="Go">
+  </div>
+  <div id="vertical">
+  </div>
+  <div id='myDiv'><div id='GraphTitle'>Graph Area</div></div>
+{% include "about.html" %}
+  <script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'js/Graph.js') }}" ></script>
+
+</body>
+</html>

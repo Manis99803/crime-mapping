@@ -1,0 +1,264 @@
+#value {
+  border:1px solid black;
+  display: none;
+}
+
+#map {
+  float:right;
+  width:80%;
+  height:950px;
+  position: absolute;
+  right:0px;
+}
+
+#menu {
+  float:left;
+  width:20%;
+  position: absolute;
+  left:0px;
+  height:800px;
+}
+
+#vertical {
+  border:1px solid black;
+  position: absolute;
+  left:19%;
+  height:950px;
+}
+
+#select {
+  width: 300px;
+  height: 25px;
+  background-color: white;
+}
+
+input[type=submit] {
+  width:80px;
+  height:25px;
+}
+
+#MenuBar {
+  height:100px;
+  width:100%;
+  background:#333;
+}
+
+#Logo {
+  float:left;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+td {
+  display:none;
+}
+
+#MenuBar {
+  height:125px;
+  width:100%;
+  background-color:#333;
+}
+
+#logo1 {
+  height: 110px;
+  width:170px;
+  position: absolute;
+  top:15px;
+  left:25px;
+}
+
+#logo2 {
+  height: 110px;
+  width:170px;
+  float:right;
+  position: absolute;
+  top:15px;
+  right:25px;
+  border:1px solid black;
+}
+
+#select {
+  width: 80%;
+  height: 35px;
+  background-color: white;
+  position: absolute;
+  top:5%;
+  left:25px;
+  font-size:20px;
+}
+
+input[type=submit] {
+  width:80px;
+  height:35px;
+  position: absolute;
+  left:25px;
+  top:10%;
+  font-size:20px;
+  color:#FFFFFF;
+  font-weight: bold;
+  background-color: #3573F0;
+  border-radius: 10px;
+}
+
+#Title {
+  font-size:50px;
+  color:white;
+  position: absolute;
+  left:27%;
+}
+
+#crimeType {
+  position: absolute;
+  left:25px;
+  top:-2.5%;
+  color:black;
+  font-size:25px;
+}
+
+#menu {
+  float:left;
+  width:20%;
+  position: absolute;
+  left:-0.5%;
+  height:84%;
+  background: #E4E4E4;
+  border:2px solid black;
+}
+
+#map {
+  float:right;
+  width:80%;
+  height:84%;
+  position: absolute;
+  right:0px;
+}
+
+#vertical {
+  border:1px solid black;
+  position: absolute;
+  left:19.8%;
+  height:84%;
+}
+
+.Link {
+  display: none;
+}
+
+#formCrimeType {
+  display: block;
+}
+
+#boxSubmit {
+  position: absolute;
+  top:30px;
+  float:right;
+  font-size:15px;
+  width:200px;
+  height: 20px;
+  background-color: black;
+  color:white;
+}
+
+.data {
+  display:none;
+}
+
+.aboutDescription {
+  font-size:30px;
+  color:white;
+  margin-left:5%;
+} 
+
+#aboutBar {
+  width:100%;
+  height:250px;
+  background-color: #333;
+  position: absolute;
+  bottom:-12%;
+  left:0;
+}
+
+body {
+  margin: 0px;
+}
+
+#Menubar {
+  width:100%;
+  height:60px;
+  background-color: #333;
+}
+
+#Home {
+  position: absolute;
+  left:68%;
+  top:10px;
+}
+
+#Login {
+  position: absolute;
+  left:72.5%;
+  top:10px;
+}
+
+#About {
+  position: absolute;
+  left:77%;
+  top:10px;
+}
+
+#Frequency {
+  position: absolute;
+  left:82%;
+  top:10px; 
+}
+
+
+#Title:hover {
+  color:orange;
+}
+
+.MenuLink {
+  font-size:25px;
+  text-decoration: none;
+  color:white;
+}
+
+#Title {
+  font-size:35px;
+  text-decoration: none;
+  color:white;
+  position: absolute;
+  top:5px;
+  left:15px;
+}

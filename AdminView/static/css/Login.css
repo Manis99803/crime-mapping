@@ -1,0 +1,52 @@
+#MenuBar {
+	height : 100px;
+	width : 100%;
+	background : black;
+}
+
+.MenuLink {
+	font-size : 25px;
+	text-decoration : none;
+	color : white;
+}
+
+#Home {
+	position: absolute;
+	left : 70%;
+	top : 10px;
+}
+
+#About {
+	position: absolute;
+	left : 80%;
+	top : 10px;
+}
+
+#Frequency {
+	position: absolute;
+	left : 90%;
+	top : 10px; 
+}
+
+#Title {
+	font-size : 35px;
+	text-decoration: none;
+	color : white;
+	position: absolute;
+	top : 5px;
+	left : 15px;
+}
+#aboutBar {
+  width:100%;
+  height:310px;
+  background-color: #333;
+  position: absolute;
+  bottom:-12%;
+  left:0;
+}
+
+.aboutDescription {
+  font-size:30px;
+  color:white;
+  margin-left:5%;
+} 

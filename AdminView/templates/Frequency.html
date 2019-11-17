@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CrimeMapping|Frequency</title>
+	<link rel="stylesheet" type="text/css"
+         href = "{{ url_for('static', filename = 'css/HomePage.css') }}" / >
+    <link rel="stylesheet" type="text/css"
+         href = "{{ url_for('static', filename = 'css/Frequency.css') }}" / >
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+     <style>
+ </style>
+</head>
+<body>
+	<div class='value'>
+	{% for row in rows %}
+	<div>
+		<div class='data'>{{ row["Location"] }}</div>
+		<div class='data'>{{ row["pincodeValue"] }}</div>
+		<div class='data'>{{ row["Latitude"] }}</div>
+		<div class='data'>{{ row["Longitude"] }}</div>
+		<div class='data'>{{ row["Frequency"] }}</div>
+		<div class='data'>{{ row["crimeType"] }}</div>
+		
+	</div>
+	{% endfor %}
+	</div>
+	<div id='Menubar'>
+      <a href='{{ url_for("getData") }}' id='Title'>CrimeAnalysis</a>
+      <a href='{{ url_for("getData") }}' id='Home' class='MenuLink'>Home</a>
+      <a href='#' id='About' class='MenuLink'>About</a>
+      <a href='{{ url_for("Graph") }}' id='Frequency' class='MenuLink'>GraphRepresentation</a>
+    </div>
+  <br>
+  
+  <div id="menu">
+    <form action="{{ url_for('FrequencyDistribution') }}" method="POST">
+      <p id="crimeType">Select Crime Type</p>
+    <select name="select" id="select">
+      <option value="MurderFrequency" class='crimeTableName' id='Murder'>Murder</option>
+      <option value="RapeFrequency" class='crimeTableName' id='Rape'>Rape</option>
+      <option value="RobberyFrequency" class='crimeTableName' id='Robbery'>Robbery</option>
+      <option value="AttackFrequency" class='crimeTableName' id='Attack'>Attack</option>
+    </select>
+    <br><br><br>
+    <input type="submit" value="Go">
+  </div>
+  <div id="vertical">
+  </div>
+  <div id="map" ></div>
+  {% include "about.html" %}
+	 <script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'js/Frequency.js') }}" ></script>
+</body>
+</html>

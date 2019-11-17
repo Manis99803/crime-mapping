@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+  <br><br><br><br><br><br><br>
+  <div class="form">
+       
+        <div id="login">  
+          <p id = "outputFeedBack" style="display: none; font-size: 20px"></p> 
+          <h1>Welcome Back!</h1>
+          
+                <div class="field-wrap">
+                  <input type="text" id="email" name = "email" placeholder="Email Id">
+                </div>
+                
+                <div class="field-wrap">
+                  <input type="password" id ="password" name = "password" placeholder="Password">
+                </div>
+                
+                <p class="forgot"><a href="#">Forgot Password?</a></p>
+                
+                <input type="submit" class="button button-block" name = "submit" value = "Log in" id = "user_login"/>
+        </div>
+</div>
+<script type="text/javascript" src = "{{ url_for('static', filename = 'js/Login.js') }}"></script>
+{% endblock %}

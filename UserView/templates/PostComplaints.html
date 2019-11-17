@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="form">
+  <div id="signup">   
+    <h1>Post Complaints</h1>
+    <p id = "outputFeedBack" style="display: none; font-size: 20px"></p>
+    <div id = "form">
+
+      <div class="field-wrap">
+        <input type="text" id = "name" name = "name" placeholder="Name">
+      </div>
+      
+      <div class="field-wrap">
+        <input type="text" id ="location" name = "Location" placeholder="Location">
+      </div>
+
+      <div class="field-wrap">
+        <input type="text" id = "category" name = "category" placeholder="Category">
+      </div>
+      
+       <div class="field-wrap">
+        <textarea id = "description" placeholder = "Description" ></textarea>
+       </div>
+      
+      <input type="submit" class="button button-block" name = "submit" value = "Submit Complaint" id = "post_complaint"/>
+    
+    </div>
+  </div>      
+</div>
+
+<script type="text/javascript" src = "{{ url_for('static', filename = 'js/PostComplaint.js') }}"></script>
+{% endblock %}
