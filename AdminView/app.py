@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, session, Response
 from datetime import date
 import dbdata as db
-
+import os
 
 app=Flask('__name__')
 
@@ -55,15 +55,15 @@ def GraphVisualization():
 	if request.method == 'POST':
 		table_name = request.form['select']
 	
-	graph_data = table_name
+	graph_data = db.get_graph_data_for_crime_type(table_name)
 	return render_template("Graph.html",rows = graph_data)
 
 
 #provide SSE stream to the web browser
 @app.route('/listensForPushes')
 def stream():
-	if session.get("logged_in")
-        return Response(db.push_data(), mimetype="text/event-stream")
+	if session.get("logged_in"):
+		return Response(db.push_data(), mimetype="text/event-stream")
 
 @app.route("/getData")
 def getData():
@@ -99,6 +99,7 @@ def ViewComplaints():
 
 
 if __name__=="__main__":
+	app.secret_key = os.urandom(12)
 	app.run(debug=True, port = 5001)
 
 
