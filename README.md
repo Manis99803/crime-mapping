@@ -1,8 +1,13 @@
-# Hackathon
+# Crime Mapping of Bengaluru City
 
-Packages Required
-	Flask
-	sqlitedbbrowser (Only if you want to view the db)
-	
-After Running the GetData.py
-	Browser : localhost:5000/getData
+To run the program
+
+1. Create a virtual env
+	python3 -m venv env
+
+2. source env/bin/activate
+
+2. Install all the requirements
+	pip3 install requirements.txt
+
+3. python3 app.py
